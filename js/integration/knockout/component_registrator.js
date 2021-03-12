@@ -34,7 +34,9 @@ if(ko) {
                 let ctorOptions = {
                     onInitializing: function() {
                         optionsByReference = this._getOptionsByReference();
-
+                        var self = this;
+                        var options = arguments;
+                        var isInitialized = false;
                         ko.computed(function() {
                             const model = ko.unwrap(valueAccessor());
 
@@ -45,7 +47,10 @@ if(ko) {
                             isBindingPropertyPredicate = isBindingPropertyPredicateName && model && model[isBindingPropertyPredicateName];
 
                             unwrapModel(model);
-
+                            if(model.onInitializing && !isInitialized) {
+                                isInitialized = true;
+                                model.onInitializing.apply(self, options);
+                            }
                             if(component) {
                                 component.endUpdate();
                             }
