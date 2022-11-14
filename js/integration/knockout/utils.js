@@ -1,7 +1,10 @@
-
-// eslint-disable-next-line no-restricted-imports
-import ko from 'knockout';
 import $ from '../../core/renderer';
+
+let ko = null;
+
+export function ko_utils(_ko) {
+    ko = _ko;
+}
 
 export const getClosestNodeWithContext = (node) => {
     const context = ko.contextFor(node);

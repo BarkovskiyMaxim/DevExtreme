@@ -1,8 +1,6 @@
-// eslint-disable-next-line no-restricted-imports
-import ko from 'knockout';
 import variableWrapper from '../../core/utils/variable_wrapper';
 
-if(ko) {
+export function variable_wrapper_utils(ko) {
     variableWrapper.inject({
         isWrapped: ko.isObservable,
         isWritableWrapped: ko.isWritableObservable,

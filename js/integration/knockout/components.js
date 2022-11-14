@@ -1,8 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
-import ko from 'knockout';
 import { getImageContainer } from '../../core/utils/icon';
 
-if(ko) {
+export function components(ko) {
     ko.bindingHandlers.dxControlsDescendantBindings = {
         init: function(_, valueAccessor) {
             return {

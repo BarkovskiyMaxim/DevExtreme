@@ -1,9 +1,8 @@
 // eslint-disable-next-line no-restricted-imports
-import ko from 'knockout';
 import { compare as compareVersion } from '../../core/utils/version';
 import { strategyChanging } from '../../core/element_data';
 
-if(ko) {
+export function clear_node_old(ko) {
     const patchCleanData = function(jQuery) {
         const cleanKoData = function(element, andSelf) {
             const cleanNode = function() {

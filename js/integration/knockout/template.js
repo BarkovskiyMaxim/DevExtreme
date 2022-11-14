@@ -1,11 +1,16 @@
 import $ from '../../core/renderer';
 import domAdapter from '../../core/dom_adapter';
-// eslint-disable-next-line no-restricted-imports
-import ko from 'knockout';
 import { isDefined } from '../../core/utils/type';
 import { TemplateBase } from '../../core/templates/template_base';
 import { normalizeTemplateElement } from '../../core/utils/dom';
 import { getClosestNodeWithContext } from './utils';
+
+
+let ko = null;
+
+export function ko_template(_ko) {
+    ko = _ko;
+}
 
 const getParentContext = function(data) {
     const parentNode = domAdapter.createElement('div');

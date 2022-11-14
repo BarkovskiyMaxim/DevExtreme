@@ -1,10 +1,9 @@
 import { afterCleanData, strategyChanging, cleanData } from '../../core/element_data';
 // eslint-disable-next-line no-restricted-imports
-import ko from 'knockout';
 import { compare as compareVersion } from '../../core/utils/version';
 import { getClosestNodeWithKoCreation } from './utils';
 
-if(ko) {
+export function clear_node(ko) {
     const originalKOCleanExternalData = ko.utils.domNodeDisposal.cleanExternalData;
     const patchCleanData = function() {
         afterCleanData(function(nodes) {

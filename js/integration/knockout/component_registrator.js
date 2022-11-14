@@ -1,6 +1,4 @@
 import $ from '../../core/renderer';
-// eslint-disable-next-line no-restricted-imports
-import ko from 'knockout';
 import Callbacks from '../../core/utils/callbacks';
 import { isPlainObject } from '../../core/utils/type';
 import registerComponentCallbacks from '../../core/component_registrator_callbacks';
@@ -15,7 +13,7 @@ import Locker from '../../core/utils/locker';
 import { getClosestNodeWithContext } from './utils';
 import config from '../../core/config';
 
-if(ko) {
+export function component_registrator(ko) {
     const LOCKS_DATA_KEY = 'dxKoLocks';
     const CREATED_WITH_KO_DATA_KEY = 'dxKoCreation';
 
